@@ -38,7 +38,7 @@ export default function Abcform(props) {
     <>
       <div className="form-container">
         <div className="my-3 mx-5">
-          <h1>Enter Your Text To Analize Below</h1>
+          <h1 className="main-heading">Enter Your Text To Analize Below</h1>
           <textarea
             className="BB my-9"
             placeholder="type here"
@@ -48,28 +48,45 @@ export default function Abcform(props) {
             cols="70"
             rows="7"
           ></textarea>
-          <button className="btn btn-primary" onClick={handledownclick}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary"
+            onClick={handledownclick}
+          >
             Convert to Uppercase
           </button>
-          <button onClick={handledown} className="mx-2 btn btn-primary">
+          <button
+            disabled={text.length === 0}
+            onClick={handledown}
+            className="mx-2 btn btn-primary"
+          >
             Convert to Lowercase
           </button>
-          <button onClick={cleartext} className="mx-2 btn btn-primary">
+          <button
+            disabled={text.length === 0}
+            onClick={cleartext}
+            className="mx-2 btn btn-primary"
+          >
             Clear text
           </button>
-          <button onClick={copyText} className="mx-2 btn btn-primary">
+          <button
+            disabled={text.length === 0}
+            onClick={copyText}
+            className="mx-2 btn btn-primary"
+          >
             copy text
           </button>
         </div>
         <div className="sec container">
           <h1 className="heading">Your Text Summery</h1>
           <p>
-            {text.split(" ").length - 1} words and {text.length} characters
+            {text.split(" ").filter((e) => e.length !== 0).length} words and{" "}
+            {text.length} characters
           </p>
           <h3 className="heading">Time taken to read this </h3>
           <p>{0.008 * text.split(" ").length} Minutes to read</p>
           <h2 className="heading">Read Your Text here</h2>
-          <p>{text}</p>
+          <p>{text.length > 0 ? text : "Try to write something !!!"}</p>
         </div>
       </div>
     </>
