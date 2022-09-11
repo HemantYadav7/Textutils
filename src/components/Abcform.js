@@ -3,13 +3,9 @@ import React, { useState } from "react";
 export default function Abcform(props) {
   const [text, setText] = useState("");
   const change = (e) => {
-    // console.log('changed')
     e.target.value = setText(e.target.value);
-
-    // console.log(text)
   };
   const handledownclick = () => {
-    // console.log('clicked')
     let newtxt = text.toUpperCase();
 
     setText(newtxt);
@@ -22,10 +18,9 @@ export default function Abcform(props) {
   };
   const cleartext = () => {
     setText("");
-    // text.style.color='white'
+
     props.showAlert("danger", " Text Cleared");
   };
-  // setText('this is che=anged by ')
 
   const copyText = () => {
     let value = document.getElementById("value");
