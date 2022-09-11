@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Abcform from "./components/Abcform";
+import Form from "./components/Form";
 import Showalert from "./components/Showalert";
 import About from "./components/About";
 
@@ -27,7 +27,7 @@ function App() {
         <Showalert alert={alert} />
 
         <Routes>
-          <Route path="/" element={<Abcform showAlert={showAlert} />}></Route>
+          <Route path="/" element={<Form showAlert={showAlert} />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
       </Router>
