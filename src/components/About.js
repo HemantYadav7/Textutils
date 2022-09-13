@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function About() {
+const About = () => {
   return (
     <div>
       <div className="accordion" id="accordionExample">
@@ -89,4 +89,5 @@ export default function About() {
       </div>
     </div>
   );
-}
+};
+export default About;

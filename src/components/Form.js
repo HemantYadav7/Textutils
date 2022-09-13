@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Abcform(props) {
+const Form = (props) => {
   const [text, setText] = useState("");
   const change = (e) => {
     e.target.value = setText(e.target.value);
@@ -86,4 +86,5 @@ export default function Abcform(props) {
       </div>
     </>
   );
-}
+};
+export default Form;
